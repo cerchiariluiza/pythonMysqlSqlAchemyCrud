@@ -2,7 +2,7 @@ from sql_alchemy import banco
 #o banco tem estas colunas
 # esta classe inicia a model
 class HotelModel(banco.Model):
-    __tablename__ = 'hoteis'
+    __tablename__ = 'hoteisf'
 
     hotel_id = banco.Column(banco.String(30), primary_key=True)
     nome = banco.Column(banco.String(80))
@@ -26,3 +26,31 @@ class HotelModel(banco.Model):
             'diaria':self.diaria,
             'cidade':self.cidade
         }
+
+    @classmethod
+    def find_hotel(cls, hotel_id):
+        hotel = cls.query.filter_by(hotel_id=hotel_id).first() #select * from w
+        if hotel:
+            return hotel
+        return None
+
+    @classmethod
+    def find_hoteis(cls):
+        hoteis = cls.query.all() #select * from
+        return hoteis
+
+
+
+    def save_hotel(self):
+        banco.session.add(self)
+        banco.session.commit()
+
+    def update(self, nome, estrelas, diaria, cidade):
+        self.nome = nome
+        self.estrelas = estrelas
+        self.diaria = diaria
+        self.cidade = cidade
+
+    def delete(self):
+        banco.session.delete(self)
+        banco.session.commit()

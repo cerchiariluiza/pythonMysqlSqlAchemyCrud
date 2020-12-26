@@ -3,8 +3,11 @@ from flask_restful import Api
 from resources.hotel import Hoteis, Hotel
 
 
+
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql:///banco.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
+#python3 -m pip install PyMySQL
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:''@localhost/phpmyadmin'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
