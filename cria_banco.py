@@ -10,7 +10,7 @@ cria_hotel = "INSERT INTO hoteis VALUES ('alpha', 'Alpha Hotel', 4.3, 345.30, 'R
 
 cursor.execute(cria_tabela)
 cursor.execute(cria_hotel)
-
+#
 #envia ao banco
 connection.commit()
 connection.close()
