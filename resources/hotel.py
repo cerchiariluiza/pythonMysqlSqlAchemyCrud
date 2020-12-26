@@ -14,7 +14,7 @@ class Hotel(Resource):
     atributos.add_argument('diaria')
     atributos.add_argument('cidade')
 
-
+#
 
     def post(self, hotel_id):
         if HotelModel.find_hotel(hotel_id):
