@@ -16,17 +16,22 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:''@localhost/phpmyadmin'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = 'DonTellAnyone'
-app.config['JWT_BLACKLIST_ENABLE'] = True
+app.config['JWT_BLACKLIST_ENABLED'] = True
 api = Api(app)
 jwt = JWTManager(app)
 
-api = Api(app)
+#o banco é criado antes
+@app.before_first_request
+def cria_banco():
+    banco.create_all()
+
+
 #
 @jwt.token_in_blacklist_loader
 def verifica_blacklist(token):
     return token['jti'] in BLACKLIST
 @jwt.revoked_token_loader
-def acesso_invalidado(token):
+def acesso_invalidado():
     return jsonify({'message':'vc foi deslogado'}), 401
 
 api.add_resource(Hoteis, '/hoteis')
@@ -36,10 +41,7 @@ api.add_resource(UserRegister, '/cadastro')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout, '/logout')
 
-#o banco é criado antes
-@app.before_first_request
-def cria_banco():
-    banco.create_all()
+
 
 #o banco colocado aqui é util para só executar quando o name(app), for executado, evitando criar sozinho
 #pip install Flask-SQLAlchemy, isso tb evita loop

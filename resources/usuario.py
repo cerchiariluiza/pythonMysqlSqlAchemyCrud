@@ -59,7 +59,7 @@ class UserLogin(Resource):
 
 class UserLogout(Resource):
      @jwt_required
-     def post(cls):
+     def post(self):
         jwt_id = get_raw_jwt()['jti']
         BLACKLIST.add(jwt_id)
         return {'message' : "deslogado"}, 200
