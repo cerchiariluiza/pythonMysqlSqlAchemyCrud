@@ -2,8 +2,9 @@ from flask_restful import Resource, reqparse
 from model.usuario import UserModel
 #o banco é importado na linha 2, e exeuta na 54
     #pip install Flask-JWT-Extended
-from flask_jwt_extended import create_access_token, jwt_required
+from flask_jwt_extended import create_access_token, jwt_required, get_raw_jwt
 from werkzeug.security import safe_str_cmp
+from blacklist import BLACKLIST
 
 atributos = reqparse.RequestParser()
 atributos.add_argument('login', type=str)
@@ -55,3 +56,10 @@ class UserLogin(Resource):
           #from flask_jwt_extended import JWTManager
           #api = Api(app)
           #jwt = JWTManager(app)
+
+class UserLogout(Resource):
+     @jwt_required
+     def post(cls):
+        jwt_id = get_raw_jwt()['jti']
+        BLACKLIST.add(jwt_id)
+        return {'message' : "deslogado"}, 200
