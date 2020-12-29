@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "24d921a8-e0b6-482a-ab2d-dc5fcd49d718",
+		"name": "api hoteis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"nome\": \"lulu\",\n    \"estrelas\": 4.3,\n    \"diaria\": 420.34,\n    \"cidade\": \"Rio de Janeiro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/hoteis/lu",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hoteis",
+						"lu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"nome\": \"lulu\",\n    \"estrelas\": 4.3,\n    \"diaria\": 420.34,\n    \"cidade\": \"Rio de Janeiro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/hoteis/lu",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hoteis",
+						"lu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/hoteis",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hoteis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/hoteis/lu",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hoteis",
+						"lu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuarios/{user_is}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/usuarios/5",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuarios/{user_is}.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/usuarios/{ùser_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"{ùser_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/usuarios/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/usuarios/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario - cadastro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\":\"admin\",\n    \"senha\": \"admin\"\n\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/usuarios/cadastro",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"usuarios",
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
