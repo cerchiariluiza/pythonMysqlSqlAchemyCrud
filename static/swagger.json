@@ -1,0 +1,329 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "api hoteis",
+    "contact": {}
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/hoteis/lu": {
+      "put": {
+        "summary": "put",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "put",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/putrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "summary": "post",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "post",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/postrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "get",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/hoteis": {
+      "get": {
+        "summary": "get all",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "getall",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/5": {
+      "get": {
+        "summary": "/usuarios/{user_is}",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "/usuarios/{user_is}",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/{ùser_id}": {
+      "delete": {
+        "summary": "/usuarios/{user_is}.",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "/usuarios/{user_is}.",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/login": {
+      "post": {
+        "summary": "login",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/logout": {
+      "post": {
+        "summary": "logout",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "logout",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/cadastro": {
+      "post": {
+        "summary": "/usuario - cadastro",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "/usuario-cadastro",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1usuario-cadastrorequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "putrequest": {
+      "title": "putrequest",
+      "example": {
+        "nome": "lulu",
+        "estrelas": 4.3,
+        "diaria": 420.34,
+        "cidade": "Rio de Janeiro"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "estrelas": {
+          "type": "number",
+          "format": "double"
+        },
+        "diaria": {
+          "type": "number",
+          "format": "double"
+        },
+        "cidade": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "estrelas",
+        "diaria",
+        "cidade"
+      ]
+    },
+    "postrequest": {
+      "title": "postrequest",
+      "example": {
+        "nome": "lulu",
+        "estrelas": 4.3,
+        "diaria": 420.34,
+        "cidade": "Rio de Janeiro"
+      },
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "estrelas": {
+          "type": "number",
+          "format": "double"
+        },
+        "diaria": {
+          "type": "number",
+          "format": "double"
+        },
+        "cidade": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nome",
+        "estrelas",
+        "diaria",
+        "cidade"
+      ]
+    },
+    "/usuario-cadastrorequest": {
+      "title": "/usuario-cadastrorequest",
+      "example": {
+        "login": "admin",
+        "senha": "admin"
+      },
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "senha": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "login",
+        "senha"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
